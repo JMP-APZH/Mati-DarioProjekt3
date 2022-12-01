@@ -10,12 +10,15 @@
 import { Router, Route } from '@redwoodjs/router'
 
 import Signup from './components/Signup'
+import GeneralLayout from './layouts/GeneralLayout/GeneralLayout'
 
 const Routes = () => {
   return (
     <Router>
-      <Route path="/luckywheel" page={LuckywheelPage} name="luckywheel" />
-      <Route path="/" page={HomePage} name="home" />
+      <Set wrap={GeneralLayout}>
+        <Route path="/luckywheel" page={LuckywheelPage} name="luckywheel" />
+        <Route path="/" page={HomePage} name="home" />
+      </Set>
       <Route path="/signup" page={Signup} name="signup" />
       <Route path="/login" page={LoginPage} name="login" />
       <Route notfound page={NotFoundPage} />
