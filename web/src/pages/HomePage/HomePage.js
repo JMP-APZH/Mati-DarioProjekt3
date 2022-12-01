@@ -53,7 +53,7 @@ const HomePage = () => {
             <p className='pb-8'>Hoi {user && user.email} ! Wie Got's </p>
             <div className="solid rounded-full border p-4 text-center text-2xl hover:bg-yellow-500">
               <button className="rounded-full bg-black p-3">
-                {/* <Link to={routes.luckywheel()}>Zum Glücksrad</Link> */}
+                <Link to={routes.luckywheel()}>Zum Glücksrad</Link>
               </button>
             </div>
             <div>

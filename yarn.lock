@@ -21852,6 +21852,7 @@ __metadata:
     helmet: ^6.0.1
     prettier-plugin-tailwindcss: ^0.2.0
     react-helmet: ^6.1.0
+    sweetalert2: ^11.6.15
   languageName: unknown
   linkType: soft
 
@@ -23273,6 +23274,13 @@ __metadata:
   dependencies:
     tslib: ^2.0.3
   checksum: 6a47c1926e06395ead750905e103be388aeec8c9697f20b14bc3e1e86fcb4fc78e5033197afe6cc8bbed80f0a4ee1f184b0fa22eec7f4a767bdfd278683d52eb
+  languageName: node
+  linkType: hard
+
+"sweetalert2@npm:^11.6.15":
+  version: 11.6.15
+  resolution: "sweetalert2@npm:11.6.15"
+  checksum: 19aff3bf9037d1a66098232bf083b0ef49732c0f751211c863d08bc876e6507b2fd0cd930677467c02aa6c370b41e71ab14fd292c78cb7d01070833ee2a2c9f2
   languageName: node
   linkType: hard
 
