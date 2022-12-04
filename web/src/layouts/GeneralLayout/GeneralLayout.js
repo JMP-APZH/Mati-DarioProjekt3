@@ -29,10 +29,10 @@ const GeneralLayout = ({ children }) => {
         <header className="">
           <div className="flex flex-col justify-center bg-yellow-500">
             <div className="flex flex-row justify-between p-2">
-              <h1 className="ml-10 pr-5 text-3xl font-bold text-black">
+              <h1 className="ml-10 pl-10 pr-18 text-center text-3xl font-bold text-black">
                 Matijanas & Darios App
               </h1>
-              <div className="md:hidden z-20 mr-10 scale-150 pt-3 pl-5 pb-2">
+              <div className="z-20 mr-10 scale-150 pt-3 pl-5 pb-2 md:hidden">
                 <AiOutlineMenu
                   className={active ? 'hidden' : 'scale-150 cursor-pointer'}
                   onClick={showMenu}
@@ -44,16 +44,19 @@ const GeneralLayout = ({ children }) => {
               <div className="md:h-54 sm:h-36 flex h-24 w-screen items-center bg-hero-image bg-cover bg-center px-4 text-red-700"></div>
             </div> */}
 
-            <div className="sm:flex sm:flex-col items-center justify-between bg-gradient-to-r from-green-500 to-cyan-500">
+            <div className="flex flex-row items-center justify-between bg-gradient-to-r from-green-500 to-cyan-500">
               <div className="logo flex text-left font-bold">
                 <h1 className="">
-                  <p className="text-red-500 bg-blue-500"> Projekt Name / Logo </p>
+                  <p className="bg-blue-500 text-red-500">
+                    {' '}
+                    Projekt Name / Logo{' '}
+                  </p>
                 </h1>
               </div>
 
               <div className="relative flex justify-between font-bold">
                 <nav className="">
-                  <ul className="scale-115 md:flex hidden gap-6 p-6 uppercase">
+                  <ul className="scale-115 hidden gap-6 p-6 uppercase md:flex">
                     <li className="cursor-pointer">
                       <Link
                         className="solid rounded-md border-black p-1 hover:border hover:bg-yellow-500"
@@ -96,13 +99,11 @@ const GeneralLayout = ({ children }) => {
         </header>
 
         {/* w-full-h md:h-96 md:w-96 relative flex items-center */}
-        <main className="relative flex items-center">
-          {children}
-        </main>
+        <main className="relative flex items-center">{children}</main>
 
         <footer className="relative bg-black text-yellow-500">
           <div className="flex flex-col justify-between">
-            <ul className="scale-115 md:flex flex flex-row items-center justify-around gap-8 p-3 text-center uppercase">
+            <ul className="scale-115 flex flex-row items-center justify-around gap-8 p-3 text-center uppercase md:flex">
               <li className="solid flex h-20 w-20 cursor-pointer flex-col items-center rounded-md border-yellow-500 pt-4 hover:border">
                 <Link
                   className="flex flex-col items-center gap-1"

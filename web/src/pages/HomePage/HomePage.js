@@ -43,9 +43,12 @@ const HomePage = () => {
       {/* <div className="sm:flex sm:h-screen sm:w-screen sm:justify-around sm:bg-gradient-to-r sm:from-yellow-500 sm:to-blue-500 flex-col p-2 text-white"> */}
       <div className="flex flex-col p-2 text-white sm:justify-center sm:bg-gradient-to-r sm:from-yellow-500 sm:to-blue-500">
         <div className="flex flex-col items-stretch p-4">
-        <p className="pb-4 text-center font-bold text-black">
-            Hoi {user && user.email} ! Wie Got's
-          </p>
+          <div className="">
+            <p className="text-center font-bold text-black">
+              Hoi {user && user.email} !
+            </p>
+            <p className="pb-4 text-center font-bold text-black">Wie Got's ?</p>
+          </div>
           <video
             src={shareVideo}
             type="video/mp4"
