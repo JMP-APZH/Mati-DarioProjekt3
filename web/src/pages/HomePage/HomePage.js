@@ -13,8 +13,7 @@ import { UserAuth } from 'src/context/AuthContext'
 import shareVideo from '-!file-loader!./share.mp4'
 
 const HomePage = () => {
-
-  const {user, logout} = UserAuth()
+  const { user, logout } = UserAuth()
 
   const handleLogout = async () => {
     try {
@@ -37,8 +36,16 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" description="Home page" />
 
-      <div className="md:flex md:h-screen md:justify-around md:bg-gradient-to-r md:from-yellow-500 md:to-blue-500 flex-col p-2 text-white">
-        <div className="flex h-full w-full items-stretch p-4">
+      <Helmet>
+        <title>Matis & Darios Projekt | Home</title>
+      </Helmet>
+
+      {/* <div className="sm:flex sm:h-screen sm:w-screen sm:justify-around sm:bg-gradient-to-r sm:from-yellow-500 sm:to-blue-500 flex-col p-2 text-white"> */}
+      <div className="flex flex-col p-2 text-white sm:justify-center sm:bg-gradient-to-r sm:from-yellow-500 sm:to-blue-500">
+        <div className="flex flex-col items-stretch p-4">
+        <p className="pb-4 text-center font-bold text-black">
+            Hoi {user && user.email} ! Wie Got's
+          </p>
           <video
             src={shareVideo}
             type="video/mp4"
@@ -49,20 +56,20 @@ const HomePage = () => {
             // className="flex h-screen sm:h-full sm:w-full md:h-2/3 md:w-full"
           />
 
-          <div className="bg-blackOverlay absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
-            <p className='pb-8'>Hoi {user && user.email} ! Wie Got's </p>
-            <div className="solid rounded-full border p-4 text-center text-2xl hover:bg-yellow-500">
-              <button className="rounded-full bg-black p-3">
-                <Link to={routes.luckywheel()}>Zum Glücksrad</Link>
-              </button>
-            </div>
-            <div>
-              <button onClick={handleLogout}>Ausloggen</button>
+          <div className="">
+            <div className="bg-blackOverlay absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
+              <div className="solid rounded-full border p-4 text-center text-2xl hover:bg-yellow-500">
+                <button className="rounded-full bg-black p-3">
+                  <Link to={routes.luckywheel()}>Zum Glücksrad</Link>
+                </button>
+              </div>
+              <div>
+                <button onClick={handleLogout}>Ausloggen</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </>
   )
 }

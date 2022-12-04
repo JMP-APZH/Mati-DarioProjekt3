@@ -40,15 +40,14 @@ const GeneralLayout = ({ children }) => {
               </div>
             </div>
 
-            <div className="">
+            {/* <div className="">
               <div className="md:h-54 sm:h-36 flex h-24 w-screen items-center bg-hero-image bg-cover bg-center px-4 text-red-700"></div>
-            </div>
+            </div> */}
 
-            <div className="md:flex flex items-center justify-between bg-gradient-to-r from-green-500 to-cyan-500 px-2">
-              <div className="logo flex pb-6 text-left font-bold">
-                <h1>
-                  {' '}
-                  <span className=""> Projekt Name / Logo </span>{' '}
+            <div className="sm:flex sm:flex-col items-center justify-between bg-gradient-to-r from-green-500 to-cyan-500">
+              <div className="logo flex text-left font-bold">
+                <h1 className="">
+                  <p className="text-red-500 bg-blue-500"> Projekt Name / Logo </p>
                 </h1>
               </div>
 
@@ -96,7 +95,8 @@ const GeneralLayout = ({ children }) => {
           </div>
         </header>
 
-        <main className="w-full-h md:h-96 md:w-96 relative flex items-center">
+        {/* w-full-h md:h-96 md:w-96 relative flex items-center */}
+        <main className="relative flex items-center">
           {children}
         </main>
 

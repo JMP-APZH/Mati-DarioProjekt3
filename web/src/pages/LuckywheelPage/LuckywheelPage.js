@@ -8,6 +8,8 @@ import applause from '-!file-loader!./applause.wav'
 import wheel from '-!file-loader!./wheel2.mp3'
 // import arrow1 from '-!file-loader!./arrow.png'
 
+import './luckywheelpage.css'
+
 function shuffle(array) {
   var currentIndex = array.length,
     randomIndex
@@ -48,6 +50,7 @@ function spin() {
   if (A5.includes(results[0])) SelectedItem = 'Restaurant'
   if (A6.includes(results[0])) SelectedItem = 'Aktivität 1'
   if (A7.includes(results[0])) SelectedItem = '🔥'
+  // if (A7.includes(results[0])) SelectedItem = '🔥'
 
   box.style.setProperty('transition', 'all ease 15s')
   box.style.transform = 'rotate(' + results[0] + 'deg)'
@@ -62,6 +65,13 @@ function spin() {
     Swal.fire({
       title: 'Team Die Hübschen',
       html: 'Eure nächste Aktivität ist : ' + ' Gym 💪 ',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp',
+      },
+      // showCloseButton: true,
       imageUrl:
         'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       imageWidth: 240,
@@ -85,14 +95,12 @@ const LuckywheelPage = () => {
         <title>Matis & Darios Projekt | LuckyWheel</title>
       </Helmet>
 
-      <div className="h-screen-w md:h-96 md:w-96">
+      <div className="sm:h-96 sm:w-96">
         <div className="text-white">
           <div className="pb-6 text-center text-2xl"></div>
 
           <div className="pb-2">
             <div className="mainbox" id="mainbox">
-              {/* <img src="./assets/arrow.png" alt="arrow"></img> */}
-
               <div className="box" id="box">
                 <div className="box1">
                   <span className="font span1">
@@ -148,7 +156,6 @@ const LuckywheelPage = () => {
           </div>
         </div>
       </div>
-
     </>
   )
 }
