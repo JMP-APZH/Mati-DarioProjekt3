@@ -65,6 +65,9 @@ function spin() {
     Swal.fire({
       title: 'Team Die Hübschen',
       html: 'Eure nächste Aktivität ist : ' + ' Gym 💪 ',
+      width: 320,
+      height: 320,
+      padding: 0.3125,
       showClass: {
         popup: 'animate__animated animate__fadeInDown',
       },
@@ -74,8 +77,8 @@ function spin() {
       // showCloseButton: true,
       imageUrl:
         'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-      imageWidth: 240,
-      imageHeight: 360,
+      imageWidth: 140,
+      imageHeight: 260,
       imageAlt: 'Custom image',
     })
   }, 17000)
@@ -95,7 +98,7 @@ const LuckywheelPage = () => {
         <title>Matis & Darios Projekt | LuckyWheel</title>
       </Helmet>
 
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <div className="text-white">
           <div className="pb-6 text-center text-2xl"></div>
 
