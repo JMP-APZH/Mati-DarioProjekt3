@@ -15,12 +15,16 @@ import GeneralLayout from './layouts/GeneralLayout/GeneralLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={GeneralLayout}>
-        <Route path="/luckywheel" page={LuckywheelPage} name="luckywheel" />
-        <Route path="/" page={HomePage} name="home" />
-      </Set>
       <Route path="/signup" page={Signup} name="signup" />
       <Route path="/login" page={LoginPage} name="login" />
+
+      <Set private unauthenticated="login">
+        <Set wrap={GeneralLayout}>
+          <Route path="/luckywheel" page={LuckywheelPage} name="luckywheel" />
+          <Route path="/" page={HomePage} name="home" />
+        </Set>
+      </Set>
+
       <Route notfound page={NotFoundPage} />
     </Router>
   )
