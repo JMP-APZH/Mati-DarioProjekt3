@@ -5,12 +5,20 @@ import { SiAddthis } from 'react-icons/si'
 import { TfiCalendar } from 'react-icons/tfi'
 import { TfiCommentsSmiley } from 'react-icons/tfi'
 
-import { Link, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
+import { firebase } from '@redwoodjs/auth/dist/authClients/firebase'
+import { Link, navigate, routes } from '@redwoodjs/router'
 
 import MenuItems from 'src/components/MenuItems'
 
 const GeneralLayout = ({ children }) => {
   const [active, setActive] = useState(false)
+
+  const { loading, isAuthenticated, logIn, logOut } = useAuth()
+
+  if (loading) {
+    return null
+  }
 
   const showMenu = () => {
     setActive(!active)
@@ -29,7 +37,7 @@ const GeneralLayout = ({ children }) => {
         <header className="">
           <div className="flex flex-col justify-center bg-yellow-500">
             <div className="flex flex-row justify-between p-2">
-              <h1 className="pl-10 pr-18 text-center text-3xl font-bold text-black">
+              <h1 className="pr-18 pl-10 text-center text-3xl font-bold text-black">
                 Matijanas & Darios App
               </h1>
               <div className="z-20 mr-10 scale-150 pt-3 pl-5 pb-2 md:hidden">
@@ -76,17 +84,26 @@ const GeneralLayout = ({ children }) => {
                     <li className="cursor-pointer">
                       <Link
                         className="solid rounded-md border-black p-1 hover:border hover:bg-yellow-500"
-                        to=""
+                        to={routes.login()}
                       >
-                        Menu Link 1
+                        Login
                       </Link>
                     </li>
                     <li className="cursor-pointer">
                       <Link
                         className="solid rounded-md border-black p-1 hover:border hover:bg-yellow-500"
+                        onClick={async () => {
+                          if (isAuthenticated) {
+                            await logOut()
+                            navigate('/login')
+                          } else {
+                            await logIn()
+                            navigate('/')
+                          }
+                        }}
                         to=""
                       >
-                        Menu Link 2
+                        {isAuthenticated ? 'Log out' : 'Log in'}
                       </Link>
                     </li>
                   </ul>
