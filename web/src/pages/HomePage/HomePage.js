@@ -61,11 +61,13 @@ const HomePage = () => {
 
           <div className="">
             <div className="bg-blackOverlay absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
-              <div className="solid rounded-full border p-4 text-center text-2xl hover:bg-yellow-500">
-                <button className="rounded-full bg-black p-3">
-                  <Link to={routes.luckywheel()}>Zum Glücksrad</Link>
-                </button>
-              </div>
+              <Link to={routes.luckywheel()}>
+                <div className="solid rounded-full border p-4 text-center text-2xl hover:bg-yellow-500">
+                  <button className="rounded-full bg-black p-3">
+                    Zum Glücksrad
+                  </button>
+                </div>
+              </Link>
               <div>
                 <button onClick={handleLogout}>Ausloggen</button>
               </div>

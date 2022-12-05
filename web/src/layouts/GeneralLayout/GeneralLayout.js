@@ -29,7 +29,7 @@ const GeneralLayout = ({ children }) => {
         <header className="">
           <div className="flex flex-col justify-center bg-yellow-500">
             <div className="flex flex-row justify-between p-2">
-              <h1 className="ml-10 pl-10 pr-18 text-center text-3xl font-bold text-black">
+              <h1 className="pl-10 pr-18 text-center text-3xl font-bold text-black">
                 Matijanas & Darios App
               </h1>
               <div className="z-20 mr-10 scale-150 pt-3 pl-5 pb-2 md:hidden">
@@ -99,7 +99,7 @@ const GeneralLayout = ({ children }) => {
         </header>
 
         {/* w-full-h md:h-96 md:w-96 relative flex items-center */}
-        <main className="relative flex items-center">{children}</main>
+        <main className="relative">{children}</main>
 
         <footer className="relative bg-black text-yellow-500">
           <div className="flex flex-col justify-between">

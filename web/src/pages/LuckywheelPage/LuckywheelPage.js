@@ -95,7 +95,7 @@ const LuckywheelPage = () => {
         <title>Matis & Darios Projekt | LuckyWheel</title>
       </Helmet>
 
-      <div className="sm:h-96 sm:w-96">
+      <div className="flex justify-center items-center">
         <div className="text-white">
           <div className="pb-6 text-center text-2xl"></div>
 
